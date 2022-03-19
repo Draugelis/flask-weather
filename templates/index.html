@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Weather in data["location"]</title>
+
+	<link rel="stylesheet" type="text/css" href="../static/css/main.css">
+
+</head>
+<body>
+	<div class="weather-container ">
+		<div class="weather-location">
+			<h1> {{ data['location'] }} </h1>
+		</div>
+		<div class="weather-stats">
+			<h1> {{ data['temp'] }}&#xb0;C</h1>
+			<img src="{{ data['icon'] }}" alt="[icon]"/>
+		</div>
+	</div>
+</body>
+</html>

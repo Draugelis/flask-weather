@@ -1,0 +1,44 @@
+@font-face {
+	font-family: nordica;
+	src:  url(../font/NordicaHairline.otf);
+}
+
+body {
+	font-family: nordica;
+	background: url('../img/night.jpg');
+	background-position: center;
+	background-size: cover;
+	color: #fff;
+}
+
+h1 {
+	font-size:  64px;
+}
+
+.weather-container {
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: column;
+}
+
+.weather-location {
+	flex: 1;
+	margin: auto;
+}
+
+.weather-location h1 {
+	align-self: flex-end;
+}
+
+.weather-stats {
+	flex: 1;
+	display: flex;
+	margin: auto;
+}
+
+.weather-stats img {
+	padding: 30px;
+	margin: auto;
+	scale: 1.5;
+}
+
