@@ -3,42 +3,36 @@
 	src:  url(../font/NordicaHairline.otf);
 }
 
-body {
+body, html {
+	height: 100%;
 	font-family: nordica;
-	background: url('../img/night.jpg');
+	margin: 0;
+}
+
+.bg { 
+	background: url('../img/stars.jpg');
+	height: 100%;
 	background-position: center;
+	background-repeat: no-repeat;
 	background-size: cover;
-	color: #fff;
+	position: relative;
 }
 
-h1 {
-	font-size:  64px;
-}
-
-.weather-container {
+.weather {
 	text-transform: uppercase;
-	display: flex;
-	flex-direction: column;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 25%;
+	text-align: center;
 }
 
-.weather-location {
-	flex: 1;
-	margin: auto;
-}
-
-.weather-location h1 {
-	align-self: flex-end;
-}
-
-.weather-stats {
-	flex: 1;
-	display: flex;
-	margin: auto;
-}
-
-.weather-stats img {
-	padding: 30px;
+.weather img {
 	margin: auto;
 	scale: 1.5;
 }
 
+.weather h1 {
+	font-size:  64px;
+	color: #fff;
+}
