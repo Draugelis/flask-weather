@@ -11,7 +11,7 @@ def home():
 	else:
 		location_request 	= requests.get(f"http://ip-api.com/json/{ip}")
 		location_data		= location_request.json()
-		location 			= location_data['City']
+		location 			= location_data['city']
 
 	weather_request = requests.get(f"https://weatherdbi.herokuapp.com/data/weather/{location}")
 	weather_data 	= weather_request.json()
