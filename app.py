@@ -6,8 +6,9 @@ app 	= Flask(__name__)
 @app.route('/')
 def home():
 	ip	= request.remote_addr
+	print(request.remote_addr) # Don't ask about this, I won't comment
 	if ip == "127.0.0.1":
-		location = "Vilnius"
+		location = "London"
 	else:
 		location_request 	= requests.get(f"http://ip-api.com/json/{ip}")
 		location_data		= location_request.json()
