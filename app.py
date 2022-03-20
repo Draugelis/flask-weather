@@ -7,8 +7,7 @@ app 	= Flask(__name__)
 
 @app.route('/')
 def home():
-	ip	= request.remote_addr
-	print(request.environ.get("HTTP_X_FORWARDED_FOR"))
+	ip	= request.environ.get("HTTP_X_FORWARDED_FOR")
 		
 	location_request 	= requests.get(f"http://ip-api.com/json/{ip}")
 	location_data		= location_request.json()
