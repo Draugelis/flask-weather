@@ -1,18 +1,21 @@
 from flask import Flask, render_template, request
 import requests
 
+DEFAULT_LOC = "London"
+
 app 	= Flask(__name__)
 
 @app.route('/')
 def home():
 	ip	= request.remote_addr
-	print(request.remote_addr) # Don't ask about this, I won't comment
-	if ip == "127.0.0.1":
-		location = "London"
+	print(request.environ.get("HTTP_X_FORWARDED_FOR"))
+		
+	location_request 	= requests.get(f"http://ip-api.com/json/{ip}")
+	location_data		= location_request.json()
+	if location_data["status"] == "success":
+		location = location_data['city']
 	else:
-		location_request 	= requests.get(f"http://ip-api.com/json/{ip}")
-		location_data		= location_request.json()
-		location 			= location_data['city']
+		location = DEFAULT_LOC
 
 	weather_request = requests.get(f"https://weatherdbi.herokuapp.com/data/weather/{location}")
 	weather_data 	= weather_request.json()
